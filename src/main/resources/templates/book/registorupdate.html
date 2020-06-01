@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title th:text="|${title}画面|"></title>
+</head>
+<body>
+<h1>[[${title}]]画面</h1>
+<form method="post" th:action="@{|/book/${proc}/confirm|}">
+<input type="hidden" name="title" id="title" th:value="${title}" />
+<ul>
+<li th:if="${title} eq '修正'" th:text="'id（変更不可）：'+${book.id}"></li>
+<input th:if="${title} eq '修正'" type="hidden" name="id" th:value="${book.id}" />
+<li>名前：<input type="text" th:field="${book.bookName}" /></li>
+<li>詳細：<input type="text" th:field="${book.bookExp}" /></li>
+<li>評価：<input type="text" th:field="${book.rate}" /> </li>
+</ul>
+<button type="submit">[[${title}]]確認する</button>
+</form>
+</body>
+</html>

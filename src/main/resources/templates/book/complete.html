@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title th:text="|${title}完了画面|"></title>
+</head>
+<body>
+<h1>[[${title}]]完了画面</h1>
+処理が完了しました。
+<a th:href="@{/book/detail/{bid}(bid=${book.id})}" th:text="変更後の状態をみる"></a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>詳細画面</title>
+</head>
+<body>
+<h1>詳細画面</h1>
+<ul>
+<li th:text="|名前：${book.bookName}|"></li>
+<li th:text="|詳細：${book.bookExp}|"></li>
+<li th:text="|評価：${book.rate}|"></li>
+</ul>
+<a th:href="@{/book/update/{bid}(bid=${book.id})}" th:text="修正"></a>
+<a th:href="@{/book/search}" th:text="もどる"></a>
+</body>
+</html>
